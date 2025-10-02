@@ -10,7 +10,7 @@
 <body>
   <div class="container section" style="padding-top:3rem">
     <h1 class="h2">Salterio Admin</h1>
-    <p class="muted">Upload gallery images, manage captions/tags.</p>
+    <p class="muted">Manage gallery & members. (Admin-only)</p>
 
     <!-- Auth panels -->
     <div id="authSignedOut" class="card mt-1">
@@ -40,7 +40,7 @@
       </div>
     </div>
 
-    <!-- Upload tool -->
+    <!-- ============ Gallery tools ============ -->
     <div id="tools" class="card mt-1" hidden>
       <strong class="block mb-04">Upload new image</strong>
       <form id="uploadForm" class="form-grid" novalidate>
@@ -57,7 +57,6 @@
       </form>
     </div>
 
-    <!-- Existing gallery (with admin delete) -->
     <div class="card mt-1">
       <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
         <strong>Gallery Items</strong>
@@ -66,7 +65,67 @@
       <div id="adminChips" class="chips mt-08"></div>
       <div id="adminGrid" class="grid grid-3 mt-1"></div>
     </div>
+
+    <!-- ============ Members tools ============ -->
+    <div id="membersTools" class="card mt-1" hidden>
+      <strong class="block mb-04">Add member</strong>
+      <form id="memberForm" class="form-grid" novalidate>
+        <label for="m_name">Name</label>
+        <input id="m_name" type="text" required placeholder="Full name" />
+        <label for="m_section">Section</label>
+        <select id="m_section" required>
+          <option value="">Select section…</option>
+          <option>Director</option>
+          <option>Chairperson</option>
+          <option>Vice Chairperson</option>
+          <option>Treasurer</option>
+          <option>Conductor</option>
+          <option>Soprano</option>
+          <option>Alto</option>
+          <option>Tenor</option>
+          <option>Bass</option>
+          <option>Accompanist</option>
+          <option>Other</option>
+        </select>
+        <label for="m_role">Role (optional)</label>
+        <input id="m_role" type="text" placeholder="e.g., Section Leader" />
+        <label for="m_sort">Order (0 = top)</label>
+        <input id="m_sort" type="number" value="0" />
+        <label for="m_photo">Headshot (optional)</label>
+        <input id="m_photo" type="file" accept="image/*" />
+        <div class="form-actions">
+          <small id="memberStatus" class="muted">Ready</small>
+          <button class="btn btn-primary" type="submit">Add Member</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="card mt-1">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+        <strong>Members</strong>
+        <button id="membersRefreshBtn" class="btn btn-outline">Refresh</button>
+      </div>
+      <div id="membersList" class="grid grid-3 mt-1"></div>
+    </div>
   </div>
+
+
+  <!-- ENQUIRIES PANEL -->
+  <div class="card mt-1" id="enquiriesPanel">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+      <strong>Enquiries</strong>
+      <div style="display:flex;gap:.5rem;align-items:center">
+        <select id="enqFilter" class="btn btn-outline" style="padding:.45rem .7rem;border-radius:10px">
+          <option value="all">All</option>
+          <option value="open">Unresolved</option>
+          <option value="handled">Handled</option>
+        </select>
+        <button id="enqRefreshBtn" class="btn btn-outline">Refresh</button>
+      </div>
+    </div>
+    <div id="enqList" class="mt-08"></div>
+</div>
+
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
