@@ -4,49 +4,71 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Salterio Admin</title>
-
-  <!-- Root styles + admin styles -->
   <link rel="stylesheet" href="/styles.css" />
   <link rel="stylesheet" href="/admin/admin.css" />
 </head>
 <body>
-  <div class="container section">
-    <h1 class="h2">Admin Dashboard</h1>
-    <p class="muted">Sign in to upload gallery images.</p>
+  <div class="container section" style="padding-top:3rem">
+    <h1 class="h2">Salterio Admin</h1>
+    <p class="muted">Upload gallery images, manage captions/tags.</p>
 
-    <div id="authBox" class="card" style="max-width:520px">
-      <label for="email">Email</label>
-      <input id="email" type="email" placeholder="zainsdube@pulseprodigy.com" />
-      <label for="password">Password</label>
-      <input id="password" type="password" placeholder="Your password" />
-      <div class="form-actions">
-        <button id="signInBtn" class="btn btn-primary">Sign in</button>
-        <small class="muted">Only allowlisted admins can upload.</small>
+    <!-- Auth panels -->
+    <div id="authSignedOut" class="card mt-1">
+      <strong class="block mb-04">Admin Sign In</strong>
+      <form id="loginForm" class="form-grid" novalidate>
+        <label for="email">Email</label>
+        <input id="email" type="email" required placeholder="you@domain.com" />
+        <label for="password">Password</label>
+        <input id="password" type="password" required placeholder="••••••••" />
+        <div class="form-actions">
+          <small class="muted">Restricted to authorised admins.</small>
+          <button class="btn btn-outline" type="submit">Sign In</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="authSignedIn" class="card mt-1" hidden>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+        <div>
+          <strong>Signed in as <span id="userEmail"></span></strong>
+          <div class="muted small">Only allowlisted admins can use tools</div>
+        </div>
+        <div style="display:flex;gap:.5rem">
+          <a class="btn btn-outline" href="/">← Back to site</a>
+          <button id="signOutBtn" class="btn btn-outline">Sign Out</button>
+        </div>
       </div>
     </div>
 
-    <div id="uploadBox" class="card" style="max-width:720px; display:none">
-      <strong class="block mb-04">Upload to Gallery</strong>
-      <input id="fileInput" type="file" accept="image/*" />
-      <div class="grid grid-2 mt-1">
-        <div>
-          <label for="caption">Caption</label>
-          <input id="caption" placeholder="e.g., Youth Concert — Kitwe" />
+    <!-- Upload tool -->
+    <div id="tools" class="card mt-1" hidden>
+      <strong class="block mb-04">Upload new image</strong>
+      <form id="uploadForm" class="form-grid" novalidate>
+        <label for="fileInput">Image file</label>
+        <input id="fileInput" type="file" accept="image/*" required />
+        <label for="caption">Caption (optional)</label>
+        <input id="caption" type="text" placeholder="e.g., Northmead SDA — Psalm 150" />
+        <label for="tag">Tag (optional)</label>
+        <input id="tag" type="text" placeholder="e.g., Worship, Concert, Outreach" />
+        <div class="form-actions">
+          <small id="uploadStatus" class="muted">Ready</small>
+          <button class="btn btn-primary" type="submit">Upload</button>
         </div>
-        <div>
-          <label for="tag">Tag</label>
-          <input id="tag" placeholder="e.g., Concert" />
-        </div>
+      </form>
+    </div>
+
+    <!-- Existing gallery (with admin delete) -->
+    <div class="card mt-1">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+        <strong>Gallery Items</strong>
+        <button id="refreshBtn" class="btn btn-outline">Refresh</button>
       </div>
-      <div class="form-actions">
-        <button id="uploadBtn" class="btn btn-accent">Upload</button>
-        <button id="signOutBtn" class="btn btn-outline">Sign out</button>
-      </div>
-      <div id="status" class="muted mt-08"></div>
+      <div id="adminChips" class="chips mt-08"></div>
+      <div id="adminGrid" class="grid grid-3 mt-1"></div>
     </div>
   </div>
 
-  <!-- Scripts: Supabase → shared config → admin logic -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="/supabase-config.js"></script>
   <script src="/admin/admin.js" defer></script>

@@ -1,0 +1,3 @@
+/* /admin/admin.css */
+.container { width: min(1000px, 100% - 2rem); }
+#adminGrid .card { padding: 0; overflow: hidden; }
