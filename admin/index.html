@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Salterio Admin</title>
+
+  <!-- Root styles + admin styles -->
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/admin/admin.css" />
+</head>
+<body>
+  <div class="container section">
+    <h1 class="h2">Admin Dashboard</h1>
+    <p class="muted">Sign in to upload gallery images.</p>
+
+    <div id="authBox" class="card" style="max-width:520px">
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="zainsdube@pulseprodigy.com" />
+      <label for="password">Password</label>
+      <input id="password" type="password" placeholder="Your password" />
+      <div class="form-actions">
+        <button id="signInBtn" class="btn btn-primary">Sign in</button>
+        <small class="muted">Only allowlisted admins can upload.</small>
+      </div>
+    </div>
+
+    <div id="uploadBox" class="card" style="max-width:720px; display:none">
+      <strong class="block mb-04">Upload to Gallery</strong>
+      <input id="fileInput" type="file" accept="image/*" />
+      <div class="grid grid-2 mt-1">
+        <div>
+          <label for="caption">Caption</label>
+          <input id="caption" placeholder="e.g., Youth Concert — Kitwe" />
+        </div>
+        <div>
+          <label for="tag">Tag</label>
+          <input id="tag" placeholder="e.g., Concert" />
+        </div>
+      </div>
+      <div class="form-actions">
+        <button id="uploadBtn" class="btn btn-accent">Upload</button>
+        <button id="signOutBtn" class="btn btn-outline">Sign out</button>
+      </div>
+      <div id="status" class="muted mt-08"></div>
+    </div>
+  </div>
+
+  <!-- Scripts: Supabase → shared config → admin logic -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/supabase-config.js"></script>
+  <script src="/admin/admin.js" defer></script>
+</body>
+</html>
