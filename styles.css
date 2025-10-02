@@ -165,3 +165,12 @@ footer{border-top:1px solid var(--border); background:#fafafa; padding:2.25rem 0
 
 /* Accessibility */
 :focus-visible{outline:3px solid rgba(14,165,233,.6); outline-offset:2px; border-radius:6px}
+
+/* --- Gallery styles --- */
+#galGrid .card{padding:0;overflow:hidden}
+.gal-item{display:grid;grid-template-rows:auto 1fr;background:var(--card)}
+.gal-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.gal-meta{padding:.75rem 1rem}
+.gal-cap{font-weight:700}
+.gal-sub{color:var(--muted);font-size:.9rem;margin-top:.25rem}
+@media (max-width:639px){#galGrid{grid-template-columns:1fr !important}}

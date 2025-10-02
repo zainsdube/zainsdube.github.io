@@ -2,254 +2,270 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Salterio Music Ensemble — SDA Choir</title>
-    <meta name="description"
-        content="Salterio Music Ensemble — a Christ-centred SDA choir in Zambia. Worship, concerts, outreach, a cappella and sacred repertoire.">
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Salterio Music Ensemble — SDA Choir</title>
+  <meta name="description"
+    content="Salterio Music Ensemble — a Christ-centred SDA choir in Zambia. Worship, concerts, outreach, a cappella and sacred repertoire.">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <!-- NAVBAR -->
-    <div class="nav-wrap">
-        <div class="navbar shadow">
-            <div class="brand">
-                <div class="logo" aria-hidden="true"></div>
-                <div class="brand-txt">
-                    <div class="brand-top">SDA Choir</div>
-                    <div class="brand-name">Salterio Music Ensemble</div>
-                </div>
-            </div>
-            <nav class="nav-links" aria-label="Primary">
-                <a href="#about">About</a>
-                <a href="#repertoire">Repertoire</a>
-                <a href="#events">Events</a>
-                <a href="#media">Media</a>
-                <a href="#members">Members</a>
-                <a href="#support">Support</a>
-                <a href="#contact">Contact</a>
-                <button class="btn btn-primary" data-scroll="#support">Book Us</button>
-            </nav>
-            <button class="nav-mobile" id="navToggle" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+  <!-- NAVBAR -->
+  <div class="nav-wrap">
+    <div class="navbar shadow">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="brand-txt">
+          <div class="brand-top">SDA Choir</div>
+          <div class="brand-name">Salterio Music Ensemble</div>
         </div>
-        <div id="mobileMenu" class="mobile-menu" hidden>
-            <a href="#about">About</a>
-            <a href="#repertoire">Repertoire</a>
-            <a href="#events">Events</a>
-            <a href="#media">Media</a>
-            <a href="#members">Members</a>
-            <a href="#support">Support</a>
-            <a href="#contact">Contact</a>
-            <button class="btn btn-primary" data-scroll="#support">Book Us</button>
-        </div>
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#repertoire">Repertoire</a>
+        <a href="#events">Events</a>
+        <a href="#media">Media</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#members">Members</a>
+        <a href="#support">Support</a>
+        <a href="#contact">Contact</a>
+        <button class="btn btn-primary" data-scroll="#support">Book Us</button>
+      </nav>
+      <button class="nav-mobile" id="navToggle" aria-expanded="false" aria-controls="mobileMenu">☰</button>
     </div>
-
-    <!-- HERO -->
-    <header class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-radial"></div>
-        <div class="container section hero-pad">
-            <div class="hero-inner">
-                <span class="pill">Seventh-day Adventist • Zambia</span>
-                <h1>Salterio Music <span class="grad-accent">Ensemble</span></h1>
-                <p class="lead">A Christ-centred choral collective dedicated to excellence in a cappella and sacred
-                    music ministry across Zambia and beyond.</p>
-                <div class="ctas">
-                    <button class="btn btn-ghost" data-scroll="#media">▶️ Watch Performances</button>
-                    <button class="btn btn-primary" data-scroll="#support">🎤 Book a Ministration</button>
-                </div>
-
-                <!-- Mini Player -->
-                <div class="player">
-                    <div class="player-row">
-                        <div class="thumb" aria-hidden="true"></div>
-                        <div class="track">
-                            <div class="track-title">Psalm 150 — Let Everything That Has Breath</div>
-                            <div class="bar" aria-label="Track progress"><span id="progressBar"></span></div>
-                        </div>
-                        <button class="icon-btn" id="playBtn" aria-pressed="false" aria-label="Play sample">▶️</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- ABOUT -->
-    <section id="about" class="section">
-        <div class="container about-grid">
-            <div>
-                <div class="badge">Ministry Through Music</div>
-                <h2 class="h2">Our Calling & Mission</h2>
-                <p class="muted">
-                    Salterio Music Ensemble is an SDA choral ministry passionate about proclaiming the Gospel through
-                    excellence in sacred repertoire.
-                    We cultivate disciplined musicianship, spiritual growth and community impact through concerts,
-                    worship services and outreach.
-                </p>
-                <div class="grid grid-2 mt-1">
-                    <div class="card">
-                        <strong class="block mb-04">Core Values</strong>
-                        <div class="muted">Reverence • Excellence • Unity • Service</div>
-                    </div>
-                    <div class="card">
-                        <strong class="block mb-04">Focus Areas</strong>
-                        <div class="muted">Worship leadership, evangelistic concerts, discipleship, youth mentorship
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="about-art about-bubbles shadow" aria-hidden="true"></div>
-        </div>
-    </section>
-
-    <!-- REPERTOIRE -->
-    <section id="repertoire" class="section alt">
-        <div class="container">
-            <h2 class="h2">Repertoire</h2>
-            <p class="muted">A curated selection for worship, concerts and outreach.</p>
-            <div id="repChips" class="chips mt-08"></div>
-            <div id="repGrid" class="rep-grid mt-1"></div>
-        </div>
-    </section>
-
-    <!-- EVENTS -->
-    <section id="events" class="section">
-        <div class="container">
-            <div class="event-head">
-                <div>
-                    <h2 class="h2">Upcoming Events</h2>
-                    <p class="muted">We would love to worship with you.</p>
-                </div>
-                <button class="btn btn-outline">📅 Full Calendar</button>
-            </div>
-            <div id="eventsGrid" class="grid grid-3 mt-1"></div>
-        </div>
-    </section>
-
-    <!-- MEDIA -->
-    <section id="media" class="section alt">
-        <div class="container">
-            <h2 class="h2">Media</h2>
-            <p class="muted">Highlights from recent ministrations and recordings.</p>
-            <div class="media-grid mt-1">
-                <div class="card">
-                    <div class="aspect-video rounded shadow">
-                        <!-- Replace with a real YouTube embed later -->
-                        <div id="ytPlaceholder" role="img" aria-label="YouTube placeholder" class="yt-ph">▶️</div>
-                    </div>
-                </div>
-                <div class="grid grid-2">
-                    <div class="card ph-43"></div>
-                    <div class="card ph-43"></div>
-                    <div class="card ph-43"></div>
-                    <div class="card ph-43"></div>
-                </div>
-            </div>
-            <div class="badges mt-08">
-                <span class="badge">🎵 A cappella</span>
-                <span class="badge">Scripture Songs</span>
-                <span class="badge">Classical Anthems</span>
-                <span class="badge">African Sacred</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- MEMBERS -->
-    <section id="members" class="section">
-        <div class="container">
-            <h2 class="h2">Leadership & Sections</h2>
-            <p class="muted">Meet our music ministry family.</p>
-            <div id="memGrid" class="mem-grid mt-1"></div>
-        </div>
-    </section>
-
-    <!-- SUPPORT -->
-    <section id="support" class="section alt">
-        <div class="container support-grid">
-            <div>
-                <h2 class="h2">Support the Ministry</h2>
-                <p class="muted">Your partnership helps us reach more souls through concerts, outreaches and recordings.
-                </p>
-                <div class="grid grid-2 mt-1">
-                    <div class="card">
-                        <strong class="block mb-04">Invite Us</strong>
-                        <div class="muted">Church services, evangelistic meetings, weddings, community events</div>
-                    </div>
-                    <div class="card">
-                        <strong class="block mb-04">Donate</strong>
-                        <div class="muted">Transport, sound, music production and outreach supplies</div>
-                    </div>
-                </div>
-                <div class="muted mt-08">🙏 Thank you for sowing into the work.</div>
-            </div>
-            <div class="card">
-                <strong class="block mb-04">Partner with Us</strong>
-                <form id="partnerForm" class="form-grid" novalidate>
-                    <label for="name">Your name</label>
-                    <input id="name" name="name" placeholder="Full name" required />
-                    <label for="email">Email</label>
-                    <input id="email" type="email" name="email" placeholder="you@example.com" required />
-                    <label for="phone">Phone</label>
-                    <input id="phone" name="phone" placeholder="+260 7XX XXX XXX" />
-                    <label for="msg">How would you like to support / event details</label>
-                    <textarea id="msg" name="message" rows="4" placeholder="Tell us about it"></textarea>
-                    <div class="form-actions">
-                        <small class="muted">We respond within 24–48 hours.</small>
-                        <button class="btn btn-accent" type="submit">Send Enquiry →</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-        <div class="container contact-grid">
-            <div>
-                <h2 class="h2">Get in Touch</h2>
-                <p class="muted">Bookings, collaborations, testimonies and prayer requests are welcome.</p>
-                <div class="grid mt-08">
-                    <div>📞 <strong>+260 ••• ••• •••</strong></div>
-                    <div>✉️ <strong>info@salteriomusic.org</strong></div>
-                    <div>📍 <strong>Lusaka, Zambia</strong></div>
-                </div>
-                <div class="socials mt-08">
-                    <button class="btn btn-outline">Facebook</button>
-                    <button class="btn btn-outline">Instagram</button>
-                    <button class="btn btn-outline">YouTube</button>
-                    <button class="btn btn-outline">Spotify</button>
-                </div>
-            </div>
-            <div class="card">
-                <strong class="block mb-04">Newsletter</strong>
-                <div class="muted">Join our mailing list for concert updates and new releases.</div>
-                <div class="newsletter">
-                    <input id="newsEmail" type="email" placeholder="Email address" />
-                    <button class="btn btn-primary" id="newsBtn">Subscribe</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container footer-inner">
-            <div class="footer-title">
-                <div class="fw-700">Salterio Music Ensemble</div>
-                <div class="muted">“Let everything that has breath praise the Lord.” — Psalm 150</div>
-            </div>
-            <div class="muted small">© <span id="year"></span> Salterio • <a href="#" class="muted">Privacy</a> • <a
-                    href="#" class="muted">Terms</a></div>
-        </div>
-    </footer>
-
-    <!-- THEME TOGGLE -->
-    <div class="theme-toggle">
-        <button id="themeBtn" class="btn btn-outline shadow">🌙 Dark Mode</button>
+    <div id="mobileMenu" class="mobile-menu" hidden>
+      <a href="#about">About</a>
+      <a href="#repertoire">Repertoire</a>
+      <a href="#events">Events</a>
+      <a href="#media">Media</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#members">Members</a>
+      <a href="#support">Support</a>
+      <a href="#contact">Contact</a>
+      <button class="btn btn-primary" data-scroll="#support">Book Us</button>
     </div>
+  </div>
 
-    <script src="main.js" defer></script>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-radial"></div>
+    <div class="container section hero-pad">
+      <div class="hero-inner">
+        <span class="pill">Seventh-day Adventist • Zambia</span>
+        <h1>Salterio Music <span class="grad-accent">Ensemble</span></h1>
+        <p class="lead">A Christ-centred choral collective dedicated to excellence in a cappella and sacred
+          music ministry across Zambia and beyond.</p>
+        <div class="ctas">
+          <button class="btn btn-ghost" data-scroll="#media">▶️ Watch Performances</button>
+          <button class="btn btn-primary" data-scroll="#support">🎤 Book a Ministration</button>
+        </div>
+
+        <!-- Mini Player -->
+        <div class="player">
+          <div class="player-row">
+            <div class="thumb" aria-hidden="true"></div>
+            <div class="track">
+              <div class="track-title">Psalm 150 — Let Everything That Has Breath</div>
+              <div class="bar" aria-label="Track progress"><span id="progressBar"></span></div>
+            </div>
+            <button class="icon-btn" id="playBtn" aria-pressed="false" aria-label="Play sample">▶️</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container about-grid">
+      <div>
+        <div class="badge">Ministry Through Music</div>
+        <h2 class="h2">Our Calling & Mission</h2>
+        <p class="muted">
+          Salterio Music Ensemble is an SDA choral ministry passionate about proclaiming the Gospel through
+          excellence in sacred repertoire.
+          We cultivate disciplined musicianship, spiritual growth and community impact through concerts,
+          worship services and outreach.
+        </p>
+        <div class="grid grid-2 mt-1">
+          <div class="card">
+            <strong class="block mb-04">Core Values</strong>
+            <div class="muted">Reverence • Excellence • Unity • Service</div>
+          </div>
+          <div class="card">
+            <strong class="block mb-04">Focus Areas</strong>
+            <div class="muted">Worship leadership, evangelistic concerts, discipleship, youth mentorship</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-art about-bubbles shadow" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- REPERTOIRE -->
+  <section id="repertoire" class="section alt">
+    <div class="container">
+      <h2 class="h2">Repertoire</h2>
+      <p class="muted">A curated selection for worship, concerts and outreach.</p>
+      <div id="repChips" class="chips mt-08"></div>
+      <div id="repGrid" class="rep-grid mt-1"></div>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section id="events" class="section">
+    <div class="container">
+      <div class="event-head">
+        <div>
+          <h2 class="h2">Upcoming Events</h2>
+          <p class="muted">We would love to worship with you.</p>
+        </div>
+        <button class="btn btn-outline">📅 Full Calendar</button>
+      </div>
+      <div id="eventsGrid" class="grid grid-3 mt-1"></div>
+    </div>
+  </section>
+
+  <!-- MEDIA -->
+  <section id="media" class="section alt">
+    <div class="container">
+      <h2 class="h2">Media</h2>
+      <p class="muted">Highlights from recent ministrations and recordings.</p>
+      <div class="media-grid mt-1">
+        <div class="card">
+          <div class="aspect-video rounded shadow">
+            <!-- Replace with a real YouTube embed later -->
+            <div id="ytPlaceholder" role="img" aria-label="YouTube placeholder" class="yt-ph">▶️</div>
+          </div>
+        </div>
+        <div class="grid grid-2">
+          <div class="card ph-43"></div>
+          <div class="card ph-43"></div>
+          <div class="card ph-43"></div>
+          <div class="card ph-43"></div>
+        </div>
+      </div>
+      <div class="badges mt-08">
+        <span class="badge">🎵 A cappella</span>
+        <span class="badge">Scripture Songs</span>
+        <span class="badge">Classical Anthems</span>
+        <span class="badge">African Sacred</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <h2 class="h2">Gallery</h2>
+      <p class="muted">Photos from services, concerts and outreaches.</p>
+      <div id="galChips" class="chips mt-08"></div>
+      <div id="galGrid" class="grid grid-3 mt-1"></div>
+    </div>
+  </section>
+
+  <!-- MEMBERS -->
+  <section id="members" class="section">
+    <div class="container">
+      <h2 class="h2">Leadership & Sections</h2>
+      <p class="muted">Meet our music ministry family.</p>
+      <div id="memGrid" class="mem-grid mt-1"></div>
+    </div>
+  </section>
+
+  <!-- SUPPORT -->
+  <section id="support" class="section alt">
+    <div class="container support-grid">
+      <div>
+        <h2 class="h2">Support the Ministry</h2>
+        <p class="muted">Your partnership helps us reach more souls through concerts, outreaches and recordings.</p>
+        <div class="grid grid-2 mt-1">
+          <div class="card">
+            <strong class="block mb-04">Invite Us</strong>
+            <div class="muted">Church services, evangelistic meetings, weddings, community events</div>
+          </div>
+          <div class="card">
+            <strong class="block mb-04">Donate</strong>
+            <div class="muted">Transport, sound, music production and outreach supplies</div>
+          </div>
+        </div>
+        <div class="muted mt-08">🙏 Thank you for sowing into the work.</div>
+      </div>
+      <div class="card">
+        <strong class="block mb-04">Partner with Us</strong>
+        <form id="partnerForm" class="form-grid" novalidate>
+          <label for="name">Your name</label>
+          <input id="name" name="name" placeholder="Full name" required />
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" placeholder="you@example.com" required />
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" placeholder="+260 7XX XXX XXX" />
+          <label for="msg">How would you like to support / event details</label>
+          <textarea id="msg" name="message" rows="4" placeholder="Tell us about it"></textarea>
+          <div class="form-actions">
+            <small class="muted">We respond within 24–48 hours.</small>
+            <button class="btn btn-accent" type="submit">Send Enquiry →</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container contact-grid">
+      <div>
+        <h2 class="h2">Get in Touch</h2>
+        <p class="muted">Bookings, collaborations, testimonies and prayer requests are welcome.</p>
+        <div class="grid mt-08">
+          <div>📞 <strong>+260 ••• ••• •••</strong></div>
+          <div>✉️ <strong>info@salteriomusic.org</strong></div>
+          <div>📍 <strong>Lusaka, Zambia</strong></div>
+        </div>
+        <div class="socials mt-08">
+          <button class="btn btn-outline">Facebook</button>
+          <button class="btn btn-outline">Instagram</button>
+          <button class="btn btn-outline">YouTube</button>
+          <button class="btn btn-outline">Spotify</button>
+        </div>
+      </div>
+      <div class="card">
+        <strong class="block mb-04">Newsletter</strong>
+        <div class="muted">Join our mailing list for concert updates and new releases.</div>
+        <div class="newsletter">
+          <input id="newsEmail" type="email" placeholder="Email address" />
+          <button class="btn btn-primary" id="newsBtn">Subscribe</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-title">
+        <div class="fw-700">Salterio Music Ensemble</div>
+        <div class="muted">“Let everything that has breath praise the Lord.” — Psalm 150</div>
+      </div>
+      <div class="muted small">© <span id="year"></span> Salterio • <a href="#" class="muted">Privacy</a> • <a href="#"
+          class="muted">Terms</a></div>
+    </div>
+  </footer>
+
+  <!-- THEME TOGGLE -->
+  <div class="theme-toggle">
+    <button id="themeBtn" class="btn btn-outline shadow">🌙 Dark Mode</button>
+  </div>
+
+  <!-- Site scripts -->
+  <script src="main.js" defer></script>
+
+  <!-- Supabase (public read-only gallery) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/supabase-config.js"></script>
+  <script src="/gallery-supabase.js" defer></script>
 </body>
 
 </html>

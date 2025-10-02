@@ -1,4 +1,4 @@
-/* Salterio Music Ensemble – Vanilla JS */
+// Salterio Music Ensemble – Vanilla JS
 
 // ------- Data -------
 const repertoire = [
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderEvents();
   renderMembers();
 
-  // ---------- Lightweight Self-Tests (console.assert) ----------
+  // Self-tests
   console.group('Salterio self-tests');
   console.assert(document.querySelector('#repertoire') !== null, 'Repertoire section exists');
   console.assert(categories.length >= 2, 'Repertoire categories detected');
@@ -173,3 +173,10 @@ document.addEventListener('DOMContentLoaded', () => {
   console.assert(members.length > 0, 'Members have items');
   console.groupEnd();
 });
+
+//Salterio.45@Music.Ensemble!
+
+
+
+//
+//
