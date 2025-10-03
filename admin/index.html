@@ -10,7 +10,7 @@
 <body>
   <div class="container section" style="padding-top:3rem">
     <h1 class="h2">Salterio Admin</h1>
-    <p class="muted">Manage gallery & members. (Admin-only)</p>
+    <p class="muted">Manage events, gallery, members & enquiries. (Admin-only)</p>
 
     <!-- Auth panels -->
     <div id="authSignedOut" class="card mt-1">
@@ -40,15 +40,38 @@
       </div>
     </div>
 
+    <!-- ============ Events ============ -->
+    <section class="card mt-1" id="eventsCard" hidden>
+      <strong class="block mb-04">Upcoming Events</strong>
+      <form id="eventForm" class="form-grid" novalidate>
+        <label for="evDate">Date</label>
+        <input id="evDate" type="date" required />
+        <label for="evTitle">Title</label>
+        <input id="evTitle" type="text" required placeholder="Concert / Worship service..." />
+        <label for="evVenue">Venue</label>
+        <input id="evVenue" type="text" placeholder="Lusaka..." />
+        <label for="evType">Type</label>
+        <input id="evType" type="text" placeholder="Concert / Worship / Outreach" />
+        <div class="form-actions">
+          <small id="eventStatus" class="muted">Ready</small>
+          <button class="btn btn-primary" type="submit">Add event</button>
+        </div>
+      </form>
+
+      <div class="list" id="adminEventsList">
+        <div class="muted">Loading events…</div>
+      </div>
+    </section>
+
     <!-- ============ Gallery tools ============ -->
     <div id="tools" class="card mt-1" hidden>
-      <strong class="block mb-04">Upload new image</strong>
+      <strong class="block mb-04">Upload new images</strong>
       <form id="uploadForm" class="form-grid" novalidate>
-        <label for="fileInput">Image file</label>
-        <input id="fileInput" type="file" accept="image/*" required />
-        <label for="caption">Caption (optional)</label>
-        <input id="caption" type="text" placeholder="e.g., Northmead SDA — Psalm 150" />
-        <label for="tag">Tag (optional)</label>
+        <label for="fileInput">Image files</label>
+        <input id="fileInput" type="file" accept="image/*" multiple required />
+        <label for="caption">Caption prefix (optional)</label>
+        <input id="caption" type="text" placeholder="e.g., Northmead SDA — " />
+        <label for="tag">Tag (applied to all)</label>
         <input id="tag" type="text" placeholder="e.g., Worship, Concert, Outreach" />
         <div class="form-actions">
           <small id="uploadStatus" class="muted">Ready</small>
@@ -107,25 +130,23 @@
       </div>
       <div id="membersList" class="grid grid-3 mt-1"></div>
     </div>
-  </div>
 
-
-  <!-- ENQUIRIES PANEL -->
-  <div class="card mt-1" id="enquiriesPanel">
-    <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
-      <strong>Enquiries</strong>
-      <div style="display:flex;gap:.5rem;align-items:center">
-        <select id="enqFilter" class="btn btn-outline" style="padding:.45rem .7rem;border-radius:10px">
-          <option value="all">All</option>
-          <option value="open">Unresolved</option>
-          <option value="handled">Handled</option>
-        </select>
-        <button id="enqRefreshBtn" class="btn btn-outline">Refresh</button>
+    <!-- ============ Enquiries ============ -->
+    <div class="card mt-1" id="enquiriesPanel">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+        <strong>Enquiries</strong>
+        <div style="display:flex;gap:.5rem;align-items:center">
+          <select id="enqFilter" class="btn btn-outline" style="padding:.45rem .7rem;border-radius:10px">
+            <option value="all">All</option>
+            <option value="open">Unresolved</option>
+            <option value="handled">Handled</option>
+          </select>
+          <button id="enqRefreshBtn" class="btn btn-outline">Refresh</button>
+        </div>
       </div>
+      <div id="enqList" class="mt-08"></div>
     </div>
-    <div id="enqList" class="mt-08"></div>
-</div>
-
+  </div>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
